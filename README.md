@@ -1,7 +1,7 @@
 # 🧠 Policy & Rules Copilot — Hybrid RAG AI (Vector + Keyword)
 Sample project with Hybrid RAG approach. Vectorless RAG along with Vector DB RAG
 
-
+# Data Flow
 ![Hybrid RAG Architecture](./FlowDiagram_HybridRAG.svg)
 
 ---
