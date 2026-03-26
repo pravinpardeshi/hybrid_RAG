@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+jinja2
+python-multipart
+ollama
+rank-bm25
+sentence-transformers
+numpy

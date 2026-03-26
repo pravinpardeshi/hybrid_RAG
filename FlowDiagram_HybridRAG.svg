@@ -1,0 +1,57 @@
+<svg width="1100" height="400" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Arrow Marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#333"></path>
+    </marker>
+  </defs>
+
+  <!-- Boxes -->
+
+  <!-- User -->
+  <rect x="20" y="140" width="180" height="100" rx="10" fill="#E3F2FD"></rect>
+  <text x="110" y="180" text-anchor="middle" font-size="14">User</text>
+  <text x="110" y="200" text-anchor="middle" font-size="12">Question + Amount</text>
+  <text x="110" y="215" text-anchor="middle" font-size="12">Hybrid Weight</text>
+
+  <!-- UI -->
+  <rect x="240" y="140" width="180" height="100" rx="10" fill="#BBDEFB"></rect>
+  <text x="330" y="180" text-anchor="middle" font-size="14">Frontend UI</text>
+  <text x="330" y="200" text-anchor="middle" font-size="12">Slider + Ask Button</text>
+
+  <!-- API -->
+  <rect x="460" y="140" width="180" height="100" rx="10" fill="#C8E6C9"></rect>
+  <text x="550" y="180" text-anchor="middle" font-size="14">FastAPI</text>
+  <text x="550" y="200" text-anchor="middle" font-size="12">/ask Endpoint</text>
+
+  <!-- Retrieval -->
+  <rect x="680" y="120" width="220" height="140" rx="10" fill="#FFF9C4"></rect>
+  <text x="790" y="160" text-anchor="middle" font-size="14">Hybrid Retrieval</text>
+  <text x="790" y="180" text-anchor="middle" font-size="12">BM25 + Semantic</text>
+  <text x="790" y="200" text-anchor="middle" font-size="12">Hybrid Score</text>
+  <text x="790" y="220" text-anchor="middle" font-size="12">w*BM25 + (1-w)*Semantic</text>
+
+  <!-- LLM -->
+  <rect x="940" y="140" width="180" height="100" rx="10" fill="#FFE0B2"></rect>
+  <text x="1030" y="180" text-anchor="middle" font-size="14">LLM (Llama 3.1)</text>
+  <text x="1030" y="200" text-anchor="middle" font-size="12">Answer Generation</text>
+
+  <!-- Output -->
+  <rect x="680" y="300" width="220" height="80" rx="10" fill="#D1C4E9"></rect>
+  <text x="790" y="330" text-anchor="middle" font-size="14">UI Output</text>
+  <text x="790" y="350" text-anchor="middle" font-size="12">Answer + Scores + Keywords</text>
+
+  <!-- Arrows -->
+  <line x1="200" y1="190" x2="240" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrow)"></line>
+  <line x1="420" y1="190" x2="460" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrow)"></line>
+  <line x1="640" y1="190" x2="680" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrow)"></line>
+  <line x1="900" y1="190" x2="940" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrow)"></line>
+
+  <!-- Down Arrow to Output -->
+  <line x1="790" y1="260" x2="790" y2="300" stroke="#333" stroke-width="2" marker-end="url(#arrow)"></line>
+
+  <!-- Back Arrow -->
+  <line x1="680" y1="340" x2="330" y2="240" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"></line>
+
+</svg>

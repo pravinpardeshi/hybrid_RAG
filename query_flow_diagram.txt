@@ -1,0 +1,33 @@
+ +-----------------+          +--------------------+          +-------------------+
+ |     User        |          |  Frontend / Slider  |          |  FastAPI Backend  |
+ |                 |  ------> |  Sends question,   | -------> |   /ask endpoint   |
+ +-----------------+          |  amount, weight    |          +-------------------+
+                              +--------------------+
+                                          |
+                                          v
+                                  +-------------------+
+                                  |  Retrieval Layer  |
+                                  | BM25 + Semantic   |
+                                  | HybridScore = w*BM25 + (1-w)*Semantic |
+                                  | Top N policies    |
+                                  +-------------------+
+                                          |
+                                          v
+                                  +-------------------+
+                                  |     LLM (3.1)     |
+                                  | Generates answer   |
+                                  | Using filtered    |
+                                  | policy context    |
+                                  +-------------------+
+                                          |
+                                          v
+                                  +-------------------+
+                                  | Frontend Display  |
+                                  | - Answer text     |
+                                  | - Policy scores   |
+                                  | - Matched keywords|
+                                  | - Spinner hides   |
+                                  +-------------------+
+
+
+
