@@ -212,16 +212,6 @@ Hybrid = w * BM25 + (1 - w) * Semantic
 
 ---
 
-## 📸 Screenshots (Add Your Own)
-
-| Feature              | Screenshot                |
-| -------------------- | ------------------------- |
-| Main UI              | `screenshots/main.png`    |
-| Explainability Panel | `screenshots/explain.png` |
-| Admin Panel          | `screenshots/admin.png`   |
-| Demo GIF             | `screenshots/demo.gif`    |
-
----
 
 ## 🧪 Example Output
 
@@ -239,18 +229,6 @@ Hybrid = w * BM25 + (1 - w) * Semantic
 * Semantic: 0.82
 * Hybrid: 1.74
 * Keywords: damaged, item
-
----
-
-## 🔮 Future Enhancements
-
-* 🔄 Re-ranking (Cross-encoder)
-* 📊 Evaluation metrics (precision@k)
-* 🧠 Query intent classification
-* ⚡ Caching layer (faster responses)
-* 🔐 Authentication for admin panel
-* 🐳 Docker deployment
-* ☁️ Cloud deployment (Render / AWS)
 
 ---
 
