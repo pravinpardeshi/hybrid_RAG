@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Policy Copilot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Policy & Rules Copilot</h1>
+
+    <textarea id="question" placeholder="Describe the issue..."></textarea>
+    <input id="amount" type="number" placeholder="Order Amount (optional)">
+
+    <!-- Hybrid Weight Slider -->
+    <div class="slider-box">
+        <label>Hybrid Weight (Keyword vs Semantic): </label><br>
+        <input type="range" id="weight" min="0" max="1" step="0.1" value="0.6">
+        <span id="weightVal">0.6</span>
+    </div>
+
+    <button onclick="askQuestion()">Ask</button>
+
+    <!-- 🔄 Spinner -->
+    <div id="spinner" class="spinner hidden"></div>
+
+    <!-- Response -->
+    <div id="response"></div>
+
+    <h3>Why these policies?</h3>
+    <div id="policies"></div>
+</div>
+
+<script>
+    const weightSlider = document.getElementById("weight");
+    const weightVal = document.getElementById("weightVal");
+
+    weightSlider.oninput = () => {
+        weightVal.innerText = weightSlider.value;
+    };
+
+    async function askQuestion() {
+        const question = document.getElementById("question").value;
+        const amount = document.getElementById("amount").value;
+        const weight = document.getElementById("weight").value;
+
+        const responseDiv = document.getElementById("response");
+        const policyDiv = document.getElementById("policies");
+        const spinner = document.getElementById("spinner");
+
+        // Clear old results
+        responseDiv.innerText = "";
+        policyDiv.innerHTML = "";
+
+        // Show spinner
+        spinner.classList.remove("hidden");
+
+        const formData = new FormData();
+        formData.append("question", question);
+        formData.append("amount", amount);
+        formData.append("weight", weight);
+
+        const res = await fetch("/ask", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await res.json();
+
+        // Hide spinner
+        spinner.classList.add("hidden");
+
+        // Show response
+        responseDiv.innerText = data.answer;
+
+        // Show policy debug info
+        data.policies.forEach(p => {
+            const el = document.createElement("div");
+            el.className = "policy-card";
+
+            el.innerHTML = `
+                <b>${p.title}</b><br>
+                BM25: ${p.bm25}<br>
+                Semantic: ${p.semantic}<br>
+                Hybrid: ${p.hybrid}<br>
+                Matched: ${p.matched.join(", ")}
+                <hr>
+            `;
+
+            policyDiv.appendChild(el);
+        });
+    }
+</script>
+
+</body>
+</html>
+
+
