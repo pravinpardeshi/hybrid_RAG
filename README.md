@@ -2,7 +2,7 @@
 Sample project with Hybrid RAG approach. Vectorless RAG along with Vector DB RAG
 
 
-![Hybrid RAG Architecture](./hybrid_rag_diagram.svg)
+![Hybrid RAG Architecture](./FlowDiagram_HybridRAG.svg)
 
 ---
 
